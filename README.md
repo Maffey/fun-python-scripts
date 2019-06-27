@@ -2,6 +2,7 @@
 Variety of mostly completely useless and reduntant scripts made for fun in Python. Most of them were made long ago, *circa* 2013.
 
 ## Table of Contents
+1. **aisdQuiz.py** - Quiz for Algorithms' test.
 1. **beepBoop.py** - Simple app with purpose to annoy the user with its sounds.
 2. **ciscoSetupHelper.py** - Never finished script that intented to help configure a Cisco router.
 3. **lotteryWinningsCalc.py** - Calculator made for fun to figure out, hypothetically, how much money can a person spend monthly to live until retirement with the lottery money evenly distributed across months.
