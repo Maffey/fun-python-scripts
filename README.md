@@ -5,6 +5,8 @@ Variety of mostly completely useless and reduntant scripts made for fun in Pytho
 1. **aisdQuiz.py** - Quiz for Algorithms' test.
 1. **beepBoop.py** - Simple app with purpose to annoy the user with its sounds.
 2. **ciscoSetupHelper.py** - Never finished script that intented to help configure a Cisco router.
+3. **drawingStuff.py** - Drawing squares using turtle. Nothing special really.
 3. **lotteryWinningsCalc.py** - Calculator made for fun to figure out, hypothetically, how much money can a person spend monthly to live until retirement with the lottery money evenly distributed across months.
+3. **simpleTimer.py** - Very obscure, crude and simple timer. Works only on Windows.
 4. **textGameRPG.py** - RPG text-based game that was abandoned early. Only first stage exists and it's very crude. Also, terrible coding inside!
 5. **wisePick.py** - Dota 2 app that gives verbose advice about picking heroes in Dota. It was useless then and even more useless now, since meta in Dota 2 changes rapidly. One of the oldest of my Python scripts.
