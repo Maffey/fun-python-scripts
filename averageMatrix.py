@@ -3,7 +3,6 @@
 # File with data is given in a .txt file.
 # First line is the number of rows and columns in matrices (their size) separated by 'x'.
 # Following lines are matrices separated by spaces, one line for each matrix.
-# IMPORTANT NOTE: Python rounds 0.5 down to 0.
 
 # To use the script in command line terminal, use 'python averageMatrix.py path/to/file.txt
 
