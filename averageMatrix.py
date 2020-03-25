@@ -21,8 +21,14 @@ def get_arguments():
 
 
 def extract_file_data(file_path):
-    with open(file_path, "r") as file:
-        file_content = file.read().splitlines()
+    try:
+        with open(file_path, "r") as file:
+            file_content = file.read().splitlines()
+
+        if file_content[-2] == "RESULT:":
+            print("[-] Error! The contents of this file have already been calculated.")
+            return None
+
         dimensions = file_content[0].split(sep="x")
         dimensions = list(map(int, dimensions))
         del file_content[0]
@@ -33,7 +39,17 @@ def extract_file_data(file_path):
             matrix = list(map(int, matrix))
             matrices.append(matrix)
 
+        if dimensions[0] * dimensions[1] != len(matrices[0]):
+            raise IndexError
+
         return dimensions, matrices
+
+    except FileNotFoundError:
+        print("[-] Error! Such file doesn't exist.")
+    except ValueError:
+        print("[-] Error! Data in the file is corrupted and impossible to read.")
+    except IndexError:
+        print("[-] Error! Incorrect matrix dimensions.")
 
 
 def calculate_average_matrix(dimensions, matrices):
@@ -55,7 +71,7 @@ def save_result(file_path, matrix):
 
 
 def print_matrix(dimensions, matrix):
-    print("Calculations done successfully.")
+    print("[+] Calculations done successfully.")
     print("RESULTING MATRIX:".rjust(20))
     for i in range(len(matrix)):
         if i % dimensions[1] == 0 and i != 0:
@@ -65,7 +81,8 @@ def print_matrix(dimensions, matrix):
 
 
 worked_file_path = get_arguments().matrices_file
-dims, mx = extract_file_data(worked_file_path)
-result = calculate_average_matrix(dims, mx)
-save_result(worked_file_path, result)
-print_matrix(dims, result)
+matrices_data = extract_file_data(worked_file_path)
+if matrices_data:
+    result = calculate_average_matrix(matrices_data[0], matrices_data[1])
+    save_result(worked_file_path, result)
+    print_matrix(matrices_data[0], result)
