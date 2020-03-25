@@ -3,6 +3,7 @@ Variety of mostly completely useless and reduntant scripts made for fun in Pytho
 
 ## Table of Contents
 + **aisdQuiz.py** - Quiz for Algorithms' test.
++ **averageMatrix.py** - Based on 'n' numbers of matrices, create an average matrix of them (image denoise).
 + **beepBoop.py** - Simple app with purpose to annoy the user with its sounds.
 + **calcSequenceEasy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
 + **ciscoSetupHelper.py** - Never finished script that intented to help configure a Cisco router.

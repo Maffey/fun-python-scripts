@@ -1,4 +1,5 @@
 #! python3
+# Windows compatible
 import winsound
 import time
 
