@@ -15,6 +15,7 @@ def count_stats():
     n += 1
     return n
 
+
 # Function for adding stats for your character.
 
 
@@ -27,19 +28,20 @@ def start_stats(func):
         global n
         if stat == "str":
             vit += 1
-            print ("One point was added to strength. \n")
+            print("One point was added to strength. \n")
             return vit
         elif stat == "agi":
             agi += 1
-            print ("One point was added to agility. \n")
+            print("One point was added to agility. \n")
             return agi
         elif stat == "int":
             wis += 1
-            print ("One point was added to intelligence. \n")
+            print("One point was added to intelligence. \n")
             return wis
         else:
-            print ("Uups, something went wrong. Try again.")
+            print("Uups, something went wrong. Try again.")
             n -= 1
+
 
 # This function shows your current stats.
 
@@ -52,6 +54,7 @@ def show_stats():
     print("Strength: " + str(vit))
     print("Agility: " + str(agi))
     print("Intelligence:  " + str(wis))
+
 
 # This function takes enemy's weaknesses (based on a, b and c) and calculate,
 #  based also on your stats, how much damage you deal.
@@ -69,21 +72,22 @@ def fight(a, b, c):
         option = input("What you want to do? Type 'a', 'b' or 'c'.")
         if option == "a":
             enemy_hp -= (vit * 10 * a)
-            print ("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
+            print("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
             return enemy_hp
 
         elif option == "b":
             enemy_hp -= (agi * 10 * b)
-            print ("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
+            print("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
             return enemy_hp
 
         elif option == "c":
             enemy_hp -= (wis * 10 * c)
-            print ("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
+            print("Your hit causes the enemy's health to drop to " + str(enemy_hp) + " points!")
             return enemy_hp
 
         else:
-            print ("Uups, something went wrong. Try again.")
+            print("Uups, something went wrong. Try again.")
+
 
 # This function is making sure that your enemy also hits you, based on fixed value for each enemy.
 
@@ -91,15 +95,15 @@ def fight(a, b, c):
 def fight_back(dmg):
     global hp
     hp -= (dmg * 10)
-    print ("The enemy dealt you some damage. You have now " + str(hp) + " health points!")
+    print("The enemy dealt you some damage. You have now " + str(hp) + " health points!")
     if hp <= 0:
-        print ("You died!")
+        print("You died!")
         input("Press ENTER to close the game.")
         raise SystemExit
 
 
 # GAME INSTRUCTIONS
-print (
+print(
     "Welcome, young warrior.\nYour mission is to defeat the enemies each day. "
     "You will do that by selecting the right choices. The attributes will also help you in fights. "
     "\nGood luck!\nYou have 100 hp, 1 strength, 1 agility and 1 intelligence point in the beginning. "
@@ -124,19 +128,21 @@ print(
 # FIRST ENEMY
 # TURN 1
 print(
-    "a) You hit him in the head with great amount of force.\nb)You attack rapidly from below.\nc) You take a bottle lying nearby and hit him with it in the head.\n")
+    "a) You hit him in the head with great amount of force.\nb)You attack rapidly from below.\nc) You take a bottle "
+    "lying nearby and hit him with it in the head.\n")
 fight(5, 7, 8)
 
 if enemy_hp > 0:
-    print (
+    print(
         "The drunk man fights back, dealing some minor damage.")
     fight_back(1)
     # TURN 2
-    print (
-        "Now:\na) You hit him in the belly.\nb) You grab his head quickly and hit the table with it.\nc)  You grab his body smartly and take him down.")
+    print(
+        "Now:\na) You hit him in the belly.\nb) You grab his head quickly and hit the table with it.\nc)  You grab "
+        "his body smartly and take him down.")
     fight(6, 8, 9)
 
-print (
+print(
     "The enemy has been defeated!\nYou got healed.")
 # STORY
 hp = 100
@@ -144,10 +150,6 @@ enemy_hp = 100
 print("Your attributes were increased!\n")
 (start_stats(count_stats))
 show_stats()
-
-# SECOND ENEMY
-
-
 
 # CLOSING APP
 input("Press ENTER to close the game.")

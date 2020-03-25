@@ -1,10 +1,11 @@
 # COUNTERPICK - ENGLISH VERSION
-print ("This program is outdated. Please don't take the advice below seriously.")
+print("This program is outdated. Please don't take the advice below seriously.")
 
 
 # FUNCTION DEFINED
 def counterpick(side, lane, position):
-    # PRINT VARIABLES DEFINED. IN ORDER: CARRY SAFELANE, CARRY HARDLANE, SUPPORT SAFELANE, SUPPORT HARDLANE, OFFLANE SAFELANE, OFFLANE HARDLANE, MID, JUNGLE
+    # PRINT VARIABLES DEFINED. IN ORDER: CARRY SAFELANE, CARRY HARDLANE, SUPPORT SAFELANE, SUPPORT HARDLANE,
+    # OFFLANE SAFELANE, OFFLANE HARDLANE, MID, JUNGLE
     cs = "Any kind of carry can work. But because mostly Radiant bot means jungle and the juke bots near towers," \
          " you can go for more risky heroes like Anti-Mage, Spectre or Medusa." \
          " Keep in mind that without proper support laning stage may go horribly."
@@ -37,63 +38,63 @@ def counterpick(side, lane, position):
     if side == "radiant":  # RADIANT
         if lane == "top":  # HARDLANE
             if position == "carry":
-                print (ch)
+                print(ch)
             elif position == "support":
-                print (sh)
+                print(sh)
             elif position == "offlane":
-                print (oh)
+                print(oh)
             else:
-                print (error_pos)
+                print(error_pos)
 
         elif lane == "mid" or position == "mid":  # MID LANE
-            print (m)
+            print(m)
 
         elif lane == "bot":  # SAFELANE
             if position == "carry":
-                print  (cs)
+                print(cs)
             elif position == "support":
-                print (ss)
+                print(ss)
             elif position == "offlane":
-                print  (os)
+                print(os)
             else:
                 print(error_pos)
 
         elif lane == "jungle":
-            print  (j)
+            print(j)
         else:
-            print (error_lane)
+            print(error_lane)
 
 
 
     elif side == "dire":  # DIRE
         if lane == "top":  # SAFELANE
             if position == "carry":
-                print  (cs)
+                print(cs)
             elif position == "support":
-                print  (ss)
+                print(ss)
             elif position == "offlane":
-                print  (os)
+                print(os)
             else:
                 print(error_pos)
 
         elif lane == "mid" or position == "mid":  # MID LANE
-            print  (m)
+            print(m)
 
         elif lane == "bot":  # HARDLANE
             if position == "carry":
-                print (ch)
+                print(ch)
             elif position == "support":
-                print (sh)
+                print(sh)
             elif position == "offlane":
-                print (oh)
+                print(oh)
             else:
                 print(error_pos)
         elif lane == "jungle":
-            print (j)
+            print(j)
         else:
             print(error_lane)
     else:
-        print (error_side)
+        print(error_side)
 
 
 # INPUTS FOR PROGRAM
@@ -110,13 +111,8 @@ try:
 finally:
     file.close()
 
-    print ("\nYou used Wise Pick v. 0.9 made by Matius on Python 3.5. \nLet the donger be with you.")
+    print("\nYou used Wise Pick v. 0.9 made by Matius on Python 3.5. \nLet the donger be with you.")
     input("\nPress ENTER to continue.")
-
-
-
-
-
 
     # CHANGELOG:
     # 0.1 - created
@@ -128,8 +124,8 @@ finally:
     # 0.7 - now catching inputs' errors
     # 0.8 - reconstruction of 'counterpick' function, additional block of code added
     # 0.9 - further optimisation
-    #
-    #	TO DO:
+
+    # TO DO:
     # -add counting answers to survey.exe
     # -add while to 'counterpick'
     #

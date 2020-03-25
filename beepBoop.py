@@ -3,7 +3,7 @@ import winsound
 import time
 
 duration = 300  # milliseconds
-freq = 0 # Hz
+freq = 0  # Hz
 
 start_sound = 50
 end_sound = 30000
