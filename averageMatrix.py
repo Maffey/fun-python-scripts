@@ -1,10 +1,12 @@
 #! python3
-# averageMatrix.py - Based on 'n' numbers of matrices, create an average matrix of them (image denoise).
-# File with data is given in a .txt file.
-# First line is the number of rows and columns in matrices (their size) separated by 'x'.
-# Following lines are matrices separated by spaces, one line for each matrix.
+"""
+averageMatrix.py - Based on 'n' numbers of matrices, create an average matrix of them (image denoise).
+File with data is given in a .txt file.
+First line is the number of rows and columns in matrices (their size) separated by 'x'.
+Following lines are matrices separated by spaces, one line for each matrix.
 
-# To use the script in command line terminal, use 'python averageMatrix.py path/to/file.txt
+To use the script in command line terminal, use 'python averageMatrix.py path/to/file.txt
+"""
 
 import argparse
 
