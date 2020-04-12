@@ -1,4 +1,4 @@
-# FunPythonScripts
+# Fun Python Scripts
 Variety of mostly completely useless and reduntant scripts made for fun in Python. Most of them were made long ago, *circa* 2013.
 
 ## Table of Contents
