@@ -3,6 +3,7 @@ Variety of mostly completely useless and reduntant scripts made for fun in Pytho
 
 ## Table of Contents
 + **aisdQuiz.py** - Quiz for Algorithms' test.
++ **adventCodeOne.py** and **adventCodeTwo.py** - Two scripts made for the Advent of Code 2019 event.
 + **averageMatrix.py** - Based on 'n' numbers of matrices, create an average matrix of them (image denoise).
 + **beepBoop.py** - Simple app with purpose to annoy the user with its sounds.
 + **calcSequenceEasy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
