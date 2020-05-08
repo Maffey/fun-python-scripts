@@ -104,12 +104,22 @@ def print_matrix(dimensions, matrix):
     print("")
 
 
+# Additional functions for images of different quality (weights applied).
+def calculate_standard_deviation(dimensions, matrix):
+    """Calculates standard deviation for SINGLE matrix. It is later used to establish weight values for matrices."""
+    # TODO: test this function.
+    size = dimensions[0] * dimensions[1]
+    average = sum(matrix) / size
+    standard_deviation = sum([(element - average) ** 2 for element in matrix]) / size
+    return standard_deviation
+
+
 # Get the path of the file from the user's input.
 worked_file_path = get_arguments().matrices_file
 # Save the matrices data to the list. First object is dimensions list, second is list of matrices.
 matrices_data = extract_file_data(worked_file_path)
-# If no errors occured (meaning there IS some matrices data),
-# procced with the calculations, saving results and printing the matrix.
+# If no errors occurred (meaning there IS some matrices data),
+# proceed with the calculations, saving results and printing the matrix.
 if matrices_data:
     result = calculate_average_matrix(matrices_data[0], matrices_data[1])
     save_result(worked_file_path, result)
