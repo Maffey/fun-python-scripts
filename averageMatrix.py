@@ -114,6 +114,11 @@ def calculate_standard_deviation(dimensions, matrix):
     return standard_deviation
 
 
+def calculate_weights(dimensions, matrices):
+    # calc weights based on standard deviation of all matrices. used in averaging
+    pass
+
+
 # Get the path of the file from the user's input.
 worked_file_path = get_arguments().matrices_file
 # Save the matrices data to the list. First object is dimensions list, second is list of matrices.
