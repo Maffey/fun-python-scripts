@@ -105,7 +105,7 @@ role = input("Which role you are going for? Type 'carry', 'support', 'mid' or 'o
 survey = input("What patch do you play on?")
 
 try:
-    file = open("wise_pick.txt", "a")
+    file = open("resources/wise_pick.txt", "a")
     file.write("Game patch: " + survey + "\n")
     counterpick(team, place, role)
 finally:
