@@ -6,11 +6,7 @@ First line is the number of rows and columns in matrices (their size) separated 
 Following lines are matrices separated by spaces, one line for each matrix.
 If the calculations succeed, script appends the result at the end of the file.
 
-To use the script in command line terminal, use `python averageMatrix.py path/to/file.txt`
-
-Important note: the code was originally programmed to work on standard image denoise (without weights).
-Currently, it's possible to use it with weights too, although code became a little bit of a mess and it needs some
-hard coded values, although it provides useful information to calculate it - most notably, weights.
+To use the script, type: `python averageMatrix.py path/to/matrices_file.txt [-w path/to/weight_file.txt]`
 """
 
 import argparse
@@ -21,16 +17,14 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(description="Based on 'n' numbers of matrices, create an average matrix of them.")
     parser.add_argument(dest="matrices_file", help="Location of the matrices file")
+    parser.add_argument("-w", "--weighted", dest="weighted_mode",
+                        help="Mode in which the script should be run. Either 'standard' or 'weighted'.")
     arguments = parser.parse_args()
-
-    # Path to the file is mandatory.
-    if arguments.matrices_file is None:
-        parser.error("[-] please specify a file with matrices, use --help")
 
     return arguments
 
 
-def extract_file_data(file_path):
+def extract_matrices_file_data(file_path):
     """Reads data from the file and saves it in a way that allows data manipulation. """
 
     try:
@@ -69,8 +63,36 @@ def extract_file_data(file_path):
         print("[-] Error! Incorrect matrix dimensions.")
 
 
-def calculate_average_matrix(dimensions, matrices, weights):
+def extract_weights_file_data(file_path):
+    with open(file_path, "r") as file:
+        file_content = file.readline().split(sep=" ")
+        weights = list(map(float, file_content))
+        return weights
+
+
+def calculate_average_matrix(dimensions, matrices):
     """Does the most important work: takes all the matrices and creates an average of them."""
+
+    average_matrix = []
+    size = dimensions[0] * dimensions[1]
+    # For all the positions in the matrix, get sum of all the values at the same position
+    # from all matrices and calculate their average.
+    for i in range(size):
+        positional_sum = 0
+        for matrix in matrices:
+            positional_sum += matrix[i]
+
+        # We round the number since for image denoise, we need integers.
+        # It's important to note that rounding uses IEEE 754 standard.
+        # Important: the line below is susceptible to change in case of using it for weighted calculations.
+        # Change sum(weights) to "size" for non-weighted option.
+        positional_average = round(positional_sum / len(matrices))
+        average_matrix.append(positional_average)
+    return average_matrix
+
+
+def calculate_average_matrix_weighted(dimensions, matrices, weights):
+    """Does the most important work: takes all the matrices and creates an average of them using weights."""
 
     average_matrix = []
     size = dimensions[0] * dimensions[1]
@@ -122,24 +144,35 @@ def calculate_standard_deviation(dimensions, matrix):
     return standard_deviation
 
 
-def print_standard_deviations(dimensions, matrices):
-    """Prints standard deviation of given matrix."""
+def print_matrices_info(dimensions, matrices):
+    """Prints basic info about matrices."""
     for matrix in matrices:
         print(f"STANDARD_DEVIATION: {calculate_standard_deviation(dimensions, matrix)}\n")
 
 
 # Get the path of the file from the user's input.
-worked_file_path = get_arguments().matrices_file
+args = get_arguments()
+worked_file_path, weighted_mode = args.matrices_file, args.weighted_mode
+
 # Save the matrices data to the list. First object is dimensions list, second is list of matrices.
-matrices_data = extract_file_data(worked_file_path)
+matrices_data = extract_matrices_file_data(worked_file_path)
+
 # If no errors occurred (meaning there IS some matrices data),
 # proceed with the calculations, saving results and printing the matrix.
 if matrices_data:
-    print_standard_deviations(matrices_data[0], matrices_data[1])  # Prints info used for weighted images.
+    # Prints all the basic data about matrices.
+    print_matrices_info(matrices_data[0], matrices_data[1])
 
     # Hard-coded weights list for each matrix. Allows to easily incorporate weighted calculations.
-    weights_list = [1.043, 1.126, 1, 1.065]
+    weights_list = [1.043, 1.126, 1, 1.065]  # TODO: put to file
 
-    result = calculate_average_matrix(matrices_data[0], matrices_data[1], weights_list)
+    if weighted_mode:
+        print("[+] Script is running in the 'weighted' mode.")
+        print(extract_weights_file_data(weighted_mode))
+        result = calculate_average_matrix_weighted(matrices_data[0], matrices_data[1], weights_list)
+    else:
+        print("[+] Script is running in the 'standard' mode.")
+        result = calculate_average_matrix(matrices_data[0], matrices_data[1])
+
     save_result(worked_file_path, result)
     print_matrix(matrices_data[0], result)
