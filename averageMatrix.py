@@ -10,6 +10,7 @@ To use the script, type: `python averageMatrix.py path/to/matrices_file.txt [-w 
 """
 
 import argparse
+import math
 
 
 def get_arguments():
@@ -133,6 +134,12 @@ def print_matrix(dimensions, matrix):
     print("")
 
 
+def print_matrices_info(dimensions, matrices):
+    """Prints basic info about matrices."""
+    for matrix in matrices:
+        print(f"STANDARD_DEVIATION: {calculate_standard_deviation(dimensions, matrix)}\n")
+
+
 # Additional functions for images of different quality (weights applied).
 def calculate_standard_deviation(dimensions, matrix):
     """Calculates standard deviation for SINGLE matrix. It is later used to establish weight values for matrices."""
@@ -144,10 +151,13 @@ def calculate_standard_deviation(dimensions, matrix):
     return standard_deviation
 
 
-def print_matrices_info(dimensions, matrices):
-    """Prints basic info about matrices."""
-    for matrix in matrices:
-        print(f"STANDARD_DEVIATION: {calculate_standard_deviation(dimensions, matrix)}\n")
+def calculate_error(dimensions, resulting_matrix, matrices, weights):
+    size = dimensions[0] * dimensions[1]
+    for i in range(size):
+        pixel_deviation = sum([((matrix[i] - resulting_matrix[i]) ** 2) * weights[j]
+                               for j, matrix in enumerate(matrices)]) / (len(matrices) - 1)
+        error = round(math.sqrt(pixel_deviation / sum(weights)))
+        print(f"Pixel #{i + 1}: {resulting_matrix[i]} ± {error}")
 
 
 # Get the path of the file from the user's input.
@@ -167,6 +177,7 @@ if matrices_data:
         print("[+] Script is running in the 'weighted' mode.")
         weights_list = extract_weights_file_data(weighted_mode)
         result = calculate_average_matrix_weighted(matrices_data[0], matrices_data[1], weights_list)
+        calculate_error(matrices_data[0], result, matrices_data[1], weights_list)
     else:
         print("[+] Script is running in the 'standard' mode.")
         result = calculate_average_matrix(matrices_data[0], matrices_data[1])
