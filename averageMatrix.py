@@ -152,6 +152,7 @@ def calculate_standard_deviation(dimensions, matrix):
 
 
 def calculate_error(dimensions, resulting_matrix, matrices, weights):
+    """Calculates the error for each value (pixel) in the resulting matrix and prints it to the terminal."""
     size = dimensions[0] * dimensions[1]
     for i in range(size):
         pixel_deviation = sum([((matrix[i] - resulting_matrix[i]) ** 2) * weights[j]
