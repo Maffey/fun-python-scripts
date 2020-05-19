@@ -163,12 +163,9 @@ if matrices_data:
     # Prints all the basic data about matrices.
     print_matrices_info(matrices_data[0], matrices_data[1])
 
-    # Hard-coded weights list for each matrix. Allows to easily incorporate weighted calculations.
-    weights_list = [1.043, 1.126, 1, 1.065]  # TODO: put to file
-
     if weighted_mode:
         print("[+] Script is running in the 'weighted' mode.")
-        print(extract_weights_file_data(weighted_mode))
+        weights_list = extract_weights_file_data(weighted_mode)
         result = calculate_average_matrix_weighted(matrices_data[0], matrices_data[1], weights_list)
     else:
         print("[+] Script is running in the 'standard' mode.")
