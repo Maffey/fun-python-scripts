@@ -1,5 +1,6 @@
 # Fun Python Scripts
-Variety of mostly completely useless and redundant scripts made for fun in Python. Most of them were made long ago, *circa* 2013.
+Variety of mostly useless and redundant scripts made for fun in Python. All of them are simple in use and have basic functionality, some are left unfinished since forever.
+A lot of them were made long ago, *circa* 2013.
 
 ## Table of Contents
 + **advent_code_one.py** and **advent_code_two.py** - Two scripts made for the Advent of Code 2019 event.
