@@ -4,7 +4,7 @@ A lot of them were made long ago, *circa* 2013.
 
 ## Table of Contents
 + **advent_code_one.py** and **advent_code_two.py** - Two scripts made for the Advent of Code 2019 event.
-+ **algorithms_quiz.py** - Quiz for Algorithms' test.
++ **algorithms_quiz.py** - Quiz for Algorithms' test. Made in Polish.
 + **beep_boop.py** - Simple app with purpose to annoy the user with its sounds.
 + **calculate_sequence_easy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
 + **drawing_stuff.py** - Drawing squares using turtle. Nothing special really.
