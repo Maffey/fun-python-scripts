@@ -33,7 +33,7 @@ def process_intcode(intcode_instructions):
 
 
 # Reads input
-with open("resources/day_two.txt", "r") as file:
+with open("../resources/day_two.txt", "r") as file:
     intcode_input_file = file.read()
 
 # Parsed intcode

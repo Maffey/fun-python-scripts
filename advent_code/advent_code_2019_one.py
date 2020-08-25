@@ -11,7 +11,7 @@ def calculate_fuel(module_mass):
 
 
 # Reads input
-with open("resources/day_one.txt", "r") as file:
+with open("../resources/day_one.txt", "r") as file:
     modules = file.readlines()
 
 # Part 1.
