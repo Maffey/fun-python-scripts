@@ -3,8 +3,12 @@ Variety of mostly useless and redundant scripts made for fun in Python. All of t
 A lot of them were made long ago, *circa* 2013.
 
 ## Table of Contents
+### Directories
++ **advent_code** - Two tasks made for the Advent of Code 2019.  
++ **decode_it** - Three tasks done for the "DECODE-IT" contest.
+At some point I realized I was late to the party (the contest was about to end). Had fun while it lasted.
+### Scripts
 + **ackermann.py** - Program demonstrating the complexity of Ackermann's recursion algorithm.
-+ **advent_code_one.py** and **advent_code_two.py** - Two scripts made for the Advent of Code 2019 event.
 + **algorithms_quiz.py** - Quiz for Algorithms' test. Made in Polish.
 + **beep_boop.py** - Simple app with purpose to annoy the user with its sounds.
 + **calculate_sequence_easy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
