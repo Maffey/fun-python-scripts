@@ -11,9 +11,12 @@ At some point I realized I was late to the party (the contest was about to end).
 + **ackermann.py** - Program demonstrating the complexity of Ackermann's recursion algorithm.
 + **algorithms_quiz.py** - Quiz for Algorithms' test. Made in Polish.
 + **beep_boop.py** - Simple app with purpose to annoy the user with its sounds.
++ **bruteforce_visualization.py** - Visualizes bruteforce in a pleasant way. No real functionality.
 + **calculate_sequence_easy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
 + **drawing_stuff.py** - Drawing squares using turtle. Nothing special really.
++ **interesting_time_finder.py** - Finds "times" with specific property in given range.
 + **lottery_winnings_calculator.py** - Calculator made for fun to figure out, hypothetically, how much money can a person spend monthly to live until retirement with the lottery money evenly distributed across months.
++ **make_string_alphabetic.py** - Removes appropriate characters from string to make the string ordered alphabetically.
 + **router_setup_helper.py** - Never finished script that intended to help configure a Cisco router.
 + **simple_timer.py** - Very obscure, crude and simple timer. Works only on Windows.
 + **text_game_rpg.py** - RPG text-based game that was abandoned early. Only first stage exists and it's very crude. Also, terrible coding inside!
