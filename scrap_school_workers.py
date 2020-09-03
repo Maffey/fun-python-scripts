@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 binary = FirefoxBinary("/usr/bin/firefox-esr")
 browser = webdriver.Firefox(firefox_binary=binary)
 
-browser.get("https://horyzont.eu/uczelnia/pracownicy-administracyjni/")
+browser.get("https://domain.protected.for.privacy.purposes.com")
 table_element = browser.find_element_by_class_name("mtr-table")
 table_rows = table_element.find_elements_by_tag_name("tr")
 
