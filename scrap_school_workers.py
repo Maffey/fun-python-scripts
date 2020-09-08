@@ -23,4 +23,4 @@ for row in table_rows:
 browser.close()
 
 workers_dataframe = pd.DataFrame(list_of_workers[1:], columns=list_of_workers[0])
-workers_dataframe_csv = workers_dataframe.to_csv(path_or_buf="school_workers.csv")
+workers_dataframe_csv = workers_dataframe.to_csv(path_or_buf="resources/school_workers.csv")
