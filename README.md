@@ -14,6 +14,7 @@ At some point I realized I was late to the party (the contest was about to end).
 + **bruteforce_visualization.py** - Visualizes bruteforce in a pleasant way. No real functionality.
 + **calculate_sequence_easy.py** - Based on the first and second element of the sequence, calculate any element of the sequence.
 + **drawing_stuff.py** - Drawing squares using turtle. Nothing special really.
++ **generate_names.py** - Generate a bulk of strings. Useful for file names.
 + **interesting_time_finder.py** - Finds "times" with specific property in given range.
 + **lottery_winnings_calculator.py** - Calculator made for fun to figure out, hypothetically, how much money can a person spend monthly to live until retirement with the lottery money evenly distributed across months.
 + **make_string_alphabetic.py** - Removes appropriate characters from string to make the string ordered alphabetically.
