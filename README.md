@@ -22,5 +22,5 @@ At some point I realized I was late to the party (the contest was about to end).
 + **router_setup_helper.py** - Never finished script that intended to help configure a Cisco router.
 + **simple_timer.py** - Very obscure, crude and simple timer. Works only on Windows.
 + **scrap_school_workers.py** - Scraper which uses Selenium to get some data from college's website about administration workers and saves said data to csv file.
-+ **text_game_rpg.py** - RPG text-based game that was abandoned early. Only first stage exists and it's very crude. Also, terrible coding inside!
++ **text_game_rpg.py** - RPG text-based game that was abandoned early. One of the first scripts I wrote. Only first stage exists and it's very crude. Also, terrible coding inside!
 + **wise_pick.py** - Dota 2 app that gives verbose advice about picking heroes in Dota. It was useless then and even more useless now, since meta in Dota 2 changes rapidly. One of the oldest of my Python scripts.
