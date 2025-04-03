@@ -19,6 +19,7 @@ At some point I realized I was late to the party (the contest was about to end).
 + **lottery_winnings_calculator.py** - Calculator made for fun to figure out, hypothetically, how much money can a person spend monthly to live until retirement with the lottery money evenly distributed across months.
 + **make_string_alphabetic.py** - Removes appropriate characters from string to make the string ordered alphabetically.
 + **merge_excel_documents.py** - Merges data from all xlsx files in a directory into one, separate worksheet.
++ **recipe_multiplier** - 100% AI-driven simple script to multiply ingredients in recipes. And it doesn't work properly.
 + **router_setup_helper.py** - Never finished script that intended to help configure a Cisco router.
 + **simple_timer.py** - Very obscure, crude and simple timer. Works only on Windows.
 + **scrap_school_workers.py** - Scraper which uses Selenium to get some data from college's website about administration workers and saves said data to csv file.
