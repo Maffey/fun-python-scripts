@@ -3,3 +3,5 @@ geckodriver.log
 resources/school_workers.csv
 .idea/
 **/__pycache__/
+input_files/
+output_files/
