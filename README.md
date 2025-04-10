@@ -8,6 +8,7 @@ A lot of them were made long ago, *circa* 2013.
 + **decode_it** - Three tasks done for the "DECODE-IT" contest.
 At some point I realized I was late to the party (the contest was about to end). Had fun while it lasted.
 ### Scripts
++ **double_words_remover.py** - vibe-coded script to remove accidental double words from given text file.
 + **ackermann.py** - Program demonstrating the complexity of Ackermann's recursion algorithm.
 + **algorithms_quiz.py** - Quiz for Algorithms' test. Made in Polish.
 + **beep_boop.py** - Simple app with purpose to annoy the user with its sounds.
